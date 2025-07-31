@@ -1,0 +1,5 @@
+.venv
+
+#drawio opened file
+*.drawio.dtmp
+*.drawio.bkp
