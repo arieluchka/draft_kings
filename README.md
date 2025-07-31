@@ -1,3 +1,11 @@
+## 2 API Automation
+
+### Assumptions
+- The api services are already running somewhere (not runned locally)
+
+- The apis are returning specific error types for different exceptions (for example, specific error type if user places a bet valued more than the balance he has)
+
+
 ## 3) Code Debugging
 
 3 issues/bad practices
@@ -24,3 +32,12 @@ Solution: Use POM (Page Object Models)
 8) if login message slightly changes (for example if the username in the message is per signing user), it will fail (unless we modify the hardcoded message).
 
 Solution: either replace "User" with variable of the user that was logged in (unless it's literally says "Welcome User" for all users), or search for a REGEX message, that starts with "^Welcome .*" 
+
+
+# Known issues/un-addressed points
+1) Didn't give special treatment to IDs patterns (transactionId/notificationId) (even tho it's possible to automatically verify response from api, to follow the txn/notif pattern)
+
+# How and When i used AI
+1) to create Request/response objects
+
+
