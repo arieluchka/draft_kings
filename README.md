@@ -1,3 +1,16 @@
+## The flow
+
+### Assumptions
+1) user balance cannot be negative
+
+
+### User possible start points
+1) 
+
+### User possible inputs
+
+
+
 ## 2 API Automation
 
 ### Assumptions
