@@ -1,7 +1,4 @@
 # Test Design
-TODO: write how i imagine the user flow
-
-
 ## Positive test cases
 
 ### 1) Valid Game (WIN)
@@ -28,6 +25,8 @@ The winnings are correctly added to his balance.
 ```
 </details>
 
+<br>
+
 ### 2) Valid Game (LOSE)
 **Preconditions:** User with Id 123 has a balance of $150.
 
@@ -48,6 +47,8 @@ User with enought balance, places a valid bet and loses the game. His initial ba
 4. GET /user/balance?userId=123   --->   verify "balance" == (150 - 10) == $140 
 ```
 </details>
+
+<br>
 
 ### 3) Betting all the User balance (and losing)
 **Preconditions:** User with Id 123 has a balance of $150.
@@ -75,6 +76,8 @@ After the game ends he lost, balance is still 0.
 
 </details>
 
+<br>
+
 ### 4) Betting all the User balance (and winning)
 
 User with a positive balance, places a bet the size of his entire balance.
@@ -82,11 +85,17 @@ After the bet, the balance is subtracted and is now 0!
 
 After the game ends he wins, balance is now higher than his initial balance.
 
+<br>
+
 ### 5) Notification and Spin messages (in a WIN)
 
 In a winning round, the message from the SPIN response (after a win) is `"Congratulations! You won $N!"`.
 
 Verify it is the same message that is sent to the notification service.
+
+<br>
+<br>
+
 
 ## Negative test cases
 ### 1) Placing a bet with 0 balance
@@ -110,6 +119,7 @@ An error message is showed, the spin doesn't proceed, the balance didnt change.
 (also should test betting $0 with $0 balance (is it a negative or an edge case?))
 </details>
 
+<br>
 
 ### 2) Non-existing User
 **Preconditions:** Choose a non existing Id (check against db?)
@@ -125,6 +135,8 @@ An error message with a 4XX (404?) is expected.
 1 GET /user/balance?userId={NON_EXISTING_ID}   --->   Error (404?)
 ```
 </details>
+
+<br>
 
 ### 3) Placing a negative bet
 **Preconditions:** User with Id 123 has a balance of $150.
@@ -143,6 +155,8 @@ An error message is raised, the bet doesn't proceed, the balance is unchanged.
 3 GET /user/balance?userId=123   --->   Still has $150
 ```
 </details>
+
+<br>
 
 ### 4) Re-using transaction Id for extra payout (transactionId is invalid after it was used)
 **Preconditions:** User with Id 123 has a balance of $150.
@@ -175,6 +189,8 @@ An error message is raised, and the balance is unchanged.
 ```
 </details>
 
+<br>
+
 ### 5) Notify without a message
 **Preconditions:** Valid user with balance, placed a bet and Spinned successfully. using the transactionId....
 
@@ -192,6 +208,8 @@ an error is rasied that the message is required.
 
 </details>
 
+<br>
+<br>
 
 ## Edge case
 ### Concurrent Bets
