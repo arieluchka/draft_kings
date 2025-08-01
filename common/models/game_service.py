@@ -11,32 +11,9 @@ class SlotSpinRequest:
 
 
 @dataclass
-class SlotWinResult:
+class SlotResult:
     userId: int
     outcome: GameOutcome
     winAmount: float
     reels: List[ReelSymbol]
     message: str
-
-
-@dataclass
-class SlotLoseResult:
-    userId: int
-    outcome: GameOutcome
-    winAmount: float
-    reels: List[ReelSymbol]
-    message: str
-
-
-@dataclass
-class SlotSpinWinResponse:
-    Win: SlotWinResult
-
-
-@dataclass
-class SlotSpinLoseResponse:
-    Lose: SlotLoseResult
-
-
-# Union type for either win or lose response
-SlotSpinResponse = Union[SlotSpinWinResponse, SlotSpinLoseResponse]

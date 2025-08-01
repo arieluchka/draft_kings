@@ -52,5 +52,5 @@ Solution: either replace "User" with variable of the user that was logged in (un
 
 # How and When i used AI
 1) to create Request/response objects
-
+2) create api interfaces for every service
 
