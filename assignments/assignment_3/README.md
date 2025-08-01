@@ -116,6 +116,11 @@ Now, if something in the elements would change/new elements would be added, we w
 
 (we can also move the page path inside the class, and have some basic methods like "navigate_to_page" and more)
 
+<br>
+
+<br>
+
+
 ### 2) invocation of the selenium web driver inside the test
 This also contributes to extra unnecessary clutter (every test need to have this line).
 
@@ -153,6 +158,10 @@ def test_login(get_page):
 
 Not only the test is much more clean and readable, we can also change configuration of the whole run/all the tests with ease.
 
+<br>
+
+<br>
+
 ### 3) Verify the user is logged in
 This depends if the user is redirected to another page after login, or is he kept in the same page, but just a "welcome" pop-up appears.
 
@@ -165,6 +174,9 @@ Meaning, we will receive an error for not finding the element, before we check t
 
 
 **also**, if the intention was to display a welcome message with the username (like: `Welcome Ariel`), then this test will need to be re-written if we will want to run with another user.
+
+<br>
+
 
 ### 4) user+password are hardcoded
 Makes it very hard to re-use this test with other credentials
