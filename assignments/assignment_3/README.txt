@@ -1,5 +1,6 @@
 
 Original code:
+
 ```js
 const { Builder, By } = require('selenium-webdriver');
 async function testLogin() {
@@ -26,6 +27,7 @@ testLogin();
 ```
 
 Python + playwright equivalent:
+
 ```python
 import pytest
 from playwright.async_api import async_playwright
